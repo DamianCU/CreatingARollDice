@@ -1,16 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import DiceRolling from './components/DoceRolling';
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <h2>Dice Rolling</h2>
+      <DiceRolling/>
     </>
   )
 }
 
-export default App
+export default App;
