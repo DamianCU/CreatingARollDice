@@ -1,3 +1,5 @@
+import React, {useState} from "react";
+
 import { 
     FaDiceOne, 
     FaDiceTwo, 
@@ -7,14 +9,19 @@ import {
     FaDiceSix
 } from "react-icons/fa";
 
-const sides = [
-    <FaDiceOne />, 
-    <FaDiceTwo />, 
-    <FaDiceThree />, 
-    <FaDiceFour />, 
-    <FaDiceFive />, 
-    <FaDiceSix />
-];
+const sides = [1, 2, 3, 4, 5, 6];
+
+const getDieComponent = (side) => {
+    const icons = {
+        1: <FaDiceOne />,
+        2: <FaDiceTwo />,
+        3: <FaDiceThree />,
+        4: <FaDiceFour />,
+        5: <FaDiceFive />,
+        6: <FaDiceSix />
+    }
+    return icons[side];
+}
 
 function DiceRolling(){
     const [die1, setDie1] = useState(sides[0]);
