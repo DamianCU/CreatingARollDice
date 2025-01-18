@@ -22,16 +22,24 @@ const sides = [
 function DiceRolling(){
     const [die1, setDie1] = useState(sides[0]);
     const [die2, setDie2] = useState(sides[0]);
+    const [isRolling, setIsRolling] = useState(false)
 
     const rollDice = () => {
-        setDie1(sides[Math.floor(Math.random() * sides.length)]);
-        setDie2(sides[Math.floor(Math.random() * sides.length)]);
+        setIsRolling(true);
+        
+        setTimeout(() =>{
+            setIsRolling(false);
+            setDie1(sides[Math.floor(Math.random() * sides.length)]);
+            setDie2(sides[Math.floor(Math.random() * sides.length)]);
+        },1000);
     };
+
+    const dieClassname = `die ${isRolling ? 'die-shaking' : ''}`
     return (
         <div className="dice-container">
             <h2>Dice Rolling</h2>
             <div className="dice">
-                <div className="die">{die1}</div>
+                <div className="die die-shaking">{die1}</div>
                 <div className="die">{die2}</div>
             </div>
             <button onClick={rollDice}>Roll Dice!</button>

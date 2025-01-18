@@ -1,4 +1,4 @@
-import DiceRolling from './components/DoceRolling';
+import DiceRolling from './components/DiceRolling';
 import './App.css'
 
 function App() {
