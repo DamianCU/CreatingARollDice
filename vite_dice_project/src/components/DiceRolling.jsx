@@ -42,9 +42,9 @@ function DiceRolling(){
                 <div className={dieClassname}>{die1}</div>
                 <div className={dieClassname}>{die2}</div>
             </div>
-            <button onClick={rollDice}>Roll Dice!</button>
+            <button disabled={isRolling} onClick={rollDice}>{isRolling ? 'Rolling' : 'Roll Dice!'} </button>
         </div>
-    )
-}
+    );
+};
 
 export default DiceRolling;
