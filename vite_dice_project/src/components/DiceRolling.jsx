@@ -39,8 +39,8 @@ function DiceRolling(){
         <div className="dice-container">
             <h2>Dice Rolling</h2>
             <div className="dice">
-                <div className="die die-shaking">{die1}</div>
-                <div className="die">{die2}</div>
+                <div className={dieClassname}>{die1}</div>
+                <div className={dieClassname}>{die2}</div>
             </div>
             <button onClick={rollDice}>Roll Dice!</button>
         </div>
