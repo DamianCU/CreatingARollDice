@@ -8,6 +8,8 @@ import {
     FaDiceSix
 } from "react-icons/fa";
 
+import './DiceRolling.css';
+
 const sides = [
     <FaDiceOne key="1" />,
     <FaDiceTwo key="2" />,
