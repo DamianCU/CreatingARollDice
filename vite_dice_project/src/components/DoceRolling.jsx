@@ -1,5 +1,4 @@
-import React, {useState} from "react";
-
+import { useState } from "react";
 import { 
     FaDiceOne, 
     FaDiceTwo, 
@@ -9,23 +8,23 @@ import {
     FaDiceSix
 } from "react-icons/fa";
 
-const sides = [1, 2, 3, 4, 5, 6];
-
-const getDieComponent = (side) => {
-    const icons = {
-        1: <FaDiceOne />,
-        2: <FaDiceTwo />,
-        3: <FaDiceThree />,
-        4: <FaDiceFour />,
-        5: <FaDiceFive />,
-        6: <FaDiceSix />
-    }
-    return icons[side];
-}
+const sides = [
+    <FaDiceOne key="1" />,
+    <FaDiceTwo key="2" />,
+    <FaDiceThree key="3" />,
+    <FaDiceFour key="4" />,
+    <FaDiceFive key="5" />,
+    <FaDiceSix key="6" />
+];
 
 function DiceRolling(){
     const [die1, setDie1] = useState(sides[0]);
     const [die2, setDie2] = useState(sides[0]);
+
+    const rollDice = () => {
+        setDie1(sides[Math.floor(Math.random() * sides.length)]);
+        setDie2(sides[Math.floor(Math.random() * sides.length)]);
+    };
     return (
         <div className="dice-container">
             <h2>Dice Rolling</h2>
@@ -33,7 +32,7 @@ function DiceRolling(){
                 <div className="die">{die1}</div>
                 <div className="die">{die2}</div>
             </div>
-            <button>Roll Dice!</button>
+            <button onClick={rollDice}>Roll Dice!</button>
         </div>
     )
 }
